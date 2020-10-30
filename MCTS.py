@@ -78,7 +78,7 @@ class MCTS(object):
 	
 	def search(self, state, time_limit, ban=None):
 		""" Keep searching until time_limit"""
-		start_time = time.clock()
+		start_time = time.perf_counter()
 		epochs = 0
 		if ban:
 			self._acts_space = np.array(list(set(self._acts_space.tolist()) - set(ban)))
@@ -86,7 +86,7 @@ class MCTS(object):
 			state_copy = copy.deepcopy(state)
 			self._search_one_epoch(state_copy)
 			epochs += 1
-			if time.clock() - start_time > time_limit:
+			if time.perf_counter() - start_time > time_limit:
 				break
 		acts = np.array([act for act in self._root.children])
 		visits = np.array([self._root.children[act]._n for act in self._root.children])

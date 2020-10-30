@@ -388,8 +388,6 @@ class MainUI(QMainWindow):
 			self.selectedT2[i].setPixmap(QPixmap(''))
 		for i in range(len(self.pool)):
 			if self.pool[i][0] not in self.ban:
-				print(self.pool[i][0])
-				print(self.ban)
 				self.selected = self.pool[i][0]
 				break
 		self.paintingT1.setPixmap(QPixmap('assets/painting/{}.png'.format(self.selected)))
