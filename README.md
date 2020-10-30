@@ -1,5 +1,5 @@
 # CuteRookie4User
- 阴阳师翻牌AI萌新的Python客户端
+ 阴阳师翻牌AI“萌新”。
 
 主页： [https://yysrank.ahrisy.com/ai](https://yysrank.ahrisy.com/ai)
 
@@ -9,7 +9,13 @@
 
 模型每周一下午6点前更新，推荐使用GitHub clone下来，以省去手动更新的烦琐。
 
-暂时还只有Python版的，网页版的等我哪天想起来再做吧~
+下载Python脚本的话请安装下面提到的包。
+
+下载exe版见右侧release，无需安装。之后每周更新后除非特别说明，否则只需要下载model文件夹和config.json文件，并替换掉原来的文件即可。
+
+百度网盘链接：
+
+
 
 ## Requirements
 
