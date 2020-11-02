@@ -151,7 +151,9 @@ class MCTS(object):
 		""" Calculate reward for a terminal state """
 		if set(state[0]) == set(state[1]):
 			return 0.5
-		return self._rewardnet([np.array([state[0]]), np.array([state[1]])])[0][0].numpy()
+		r1 = self._rewardnet([np.array([state[0]]), np.array([state[1]])])[0][0].numpy()
+		r2 = self._rewardnet([np.array([state[1]]), np.array([state[0]])])[0][0].numpy()
+		return (r1 + 1-r2) / 2
 	
 		
 	def _predict(self, state):

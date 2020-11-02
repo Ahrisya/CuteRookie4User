@@ -124,6 +124,10 @@ class MainUI(QMainWindow):
 		self.moreBtn.setFixedSize(QSize(100, 30))
 		self.moreBtn.clicked.connect(self.showmoreDialog)
 
+		self.cheatCBox = QCheckBox('作弊模式')
+		self.cheatCBox.setFixedSize(QSize(100, 30))
+		self.cheatCBox.setChecked(self.user_config['params']['cheat'])
+
 		self.settingLayout.addWidget(self.paraLabel, 0, 0, 1, 2, Qt.AlignCenter)
 		self.settingLayout.addWidget(QLabel('C1'), 1, 0, Qt.AlignCenter)
 		self.settingLayout.addWidget(self.c1Text, 1, 1, Qt.AlignCenter)
@@ -139,6 +143,7 @@ class MainUI(QMainWindow):
 		self.settingLayout.addWidget(self.saveBtn, 8, 0, 1, 2, Qt.AlignCenter)
 		self.settingLayout.addWidget(self.resetBtn, 9, 0, 1, 2, Qt.AlignCenter)
 		self.settingLayout.addWidget(self.moreBtn, 10, 0, 1, 2, Qt.AlignCenter)
+		self.settingLayout.addWidget(self.cheatCBox, 11, 0, 1, 2, Qt.AlignCenter)
 
 		self.settingLayout.setHorizontalSpacing(10)
 
@@ -150,6 +155,7 @@ class MainUI(QMainWindow):
 			QPushButton {border:none; font-family:"Microsoft YaHei UI"; font-size:16px; color:white}
 			QPushButton:hover {border:1px solid #F3F3F5; border-radius:10px; background:LightGray; color:black}
 			QLineEdit {border-radius:2px; font-size:16px}
+			QCheckBox {border:none; font-family:"Microsoft YaHei UI"; font-size:16px; color:white}
 			'''
 			)
 
@@ -352,6 +358,7 @@ class MainUI(QMainWindow):
 		self.user_config['params']['thres'] = float(self.thresText.text())
 		self.user_config['params']['use_ban'] = self.banDialog.enabled()
 		self.user_config['params']['ban'] = self.ban
+		self.user_config['params']['cheat'] = self.cheatCBox.isChecked()
 		config_file = open('config.json', 'w')
 		config_file.write(json.dumps(self.user_config))
 		config_file.close()
@@ -362,6 +369,7 @@ class MainUI(QMainWindow):
 		self.c2Text.setText(str(self.user_config['params']['default_c2']))
 		self.timeText.setText(str(self.user_config['params']['default_time_limit']))
 		self.thresText.setText(str(self.user_config['params']['default_thres']))
+		self.cheatCBox.setChecked(False)
 		self.banDialog.reset()
 		self.ban = []
 		self.refreshPool([])
@@ -408,6 +416,8 @@ class MainUI(QMainWindow):
 		time_limit = float(self.timeText.text())
 		self.AI.setParam(thres, c1, c2, time_limit, [name2idx[name] for name in self.ban])
 		self.timer.start()
+		if self.cheatCBox.isChecked():
+			self.timerLabel.setText('...')
 		self.runAI()
 
 	def runAI(self):
@@ -419,14 +429,18 @@ class MainUI(QMainWindow):
 	def getAIPick(self, ai_pick):
 		self.selected_ai = ai_pick
 		self.statusT2.setText('已选定')
+		if self.cheatCBox.isChecked():
+			self.paintingT2.setPixmap(QPixmap('assets/painting/{}.png'.format(self.selected_ai)))
+			self.paintingT2.setScaledContents(True)
 
 	def refreshTimer(self):
 		if self.count > 0:
 			if self.statusT1.text() == '已选定' and self.statusT2.text() == '已选定':
 				self.count = 0
 			else:
-				self.count -= 1
-				self.timerLabel.setText(str(self.count))
+				if not self.cheatCBox.isChecked():
+					self.count -= 1
+					self.timerLabel.setText(str(self.count))
 		elif self.count > -3:
 			self.count -= 1
 			self.can_select = False
@@ -447,6 +461,8 @@ class MainUI(QMainWindow):
 			if self.round == 5:
 				self.endGame()
 			else:
+				if self.cheatCBox.isChecked():
+					self.timerLabel.setText('...')
 				self.statusT1.setText('选择中')
 				self.statusT2.setText('选择中')
 				self.paintingT2.setText('?')

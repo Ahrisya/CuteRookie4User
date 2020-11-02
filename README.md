@@ -13,9 +13,9 @@
 
 下载exe版下面链接，无需安装。之后每周更新后除非特别说明，否则只需要下载model文件夹和config.json文件，并替换掉原来的文件即可。
 
-百度网盘链接：
+百度网盘链接（请下载最新版本）：
 
-[https://pan.baidu.com/s/15UHSH3uVphV7TRII54aIIg](https://pan.baidu.com/s/15UHSH3uVphV7TRII54aIIg) , 提取码：ms8w
+[https://pan.baidu.com/s/1Ylht2f-miVivakajNl6xkA](https://pan.baidu.com/s/1Ylht2f-miVivakajNl6xkA) , 提取码：64p3
 
 ## Requirements
 
@@ -55,6 +55,7 @@ PyQt5也可以用相同方法从国内镜像下载。
 * 阈值：先验概率低于该阈值的分支将不进行搜索。
 * 计算时间：AI用于计算的时间。
 * Ban（按钮）：点击可选择一些式神，被选中的式神将会被Ban掉。
+* 作弊模式：勾选后时间无限，且可以看到AI的选人。
 
 ## Implementation
 

@@ -1944,5 +1944,16 @@
           "icon": "https://ok.166.net/gameyw-misc/opd/squash/20200916/143305-mcq2zd1j7y.png",
           "icon_transparent": "https://ok.166.net/gameyw-misc/opd/squash/20200916/143305-mcq2zd1j7y.png",
           "icon_with_name": ""
+     },
+     "356": {
+          "id": 356,
+          "name": "千姬",
+          "rarity": 5,
+          "painting": "https://ok.166.net/gameyw-misc/opd/squash/20201026/144456-5039gozle1.png",
+          "painting_cut": "https://ok.166.net/gameyw-misc/opd/squash/20201028/155113-p4lod51irq.png",
+          "painting_cut_awake": "https://ok.166.net/gameyw-misc/opd/squash/20201028/155113-ur14o3yh7i.png",
+          "icon": "https://ok.166.net/gameyw-misc/opd/squash/20201028/154500-64ket8h9ca.jpg",
+          "icon_transparent": "https://ok.166.net/gameyw-misc/opd/squash/20201026/144458-jcgifesr29.png",
+          "icon_with_name": ""
      }
 }
