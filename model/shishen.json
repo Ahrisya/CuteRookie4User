@@ -1955,5 +1955,16 @@
           "icon": "https://ok.166.net/gameyw-misc/opd/squash/20201028/154500-64ket8h9ca.jpg",
           "icon_transparent": "https://ok.166.net/gameyw-misc/opd/squash/20201026/144458-jcgifesr29.png",
           "icon_with_name": ""
+     },
+     "357": {
+          "id": 357,
+          "name": "初翎山风",
+          "rarity": 6,
+          "painting": "https://ok.166.net/gameyw-misc/opd/squash/20201130/165422-gphvkm1rob.png",
+          "painting_cut": "https://ok.166.net/gameyw-misc/opd/squash/20201202/141701-4w67chzvdt.png",
+          "painting_cut_awake": "https://ok.166.net/gameyw-misc/opd/squash/20201202/141701-4w67chzvdt.png",
+          "icon": "https://ok.166.net/gameyw-misc/opd/squash/20201202/141318-lqy9e734zb.jpg",
+          "icon_transparent": "https://ok.166.net/gameyw-misc/opd/squash/20201130/165424-o3u4vf8dkl.png",
+          "icon_with_name": ""
      }
 }
