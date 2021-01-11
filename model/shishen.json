@@ -1966,5 +1966,16 @@
           "icon": "https://ok.166.net/gameyw-misc/opd/squash/20201202/141318-lqy9e734zb.jpg",
           "icon_transparent": "https://ok.166.net/gameyw-misc/opd/squash/20201130/165424-o3u4vf8dkl.png",
           "icon_with_name": ""
+     },
+     "358": {
+          "id": 358,
+          "name": "夜溟彼岸花",
+          "rarity": 6,
+          "painting": "https://ok.166.net/gameyw-misc/opd/squash/20210105/123826-j80ped5qsa.png",
+          "painting_cut": "https://ok.166.net/gameyw-misc/opd/squash/20210106/143404-fd9eo720mw.png",
+          "painting_cut_awake": "https://ok.166.net/gameyw-misc/opd/squash/20210106/143404-fd9eo720mw.png",
+          "icon": "https://ok.166.net/gameyw-misc/opd/squash/20210106/143101-0zuf7ad2k4.jpg",
+          "icon_transparent": "https://ok.166.net/gameyw-misc/opd/squash/20210105/122509-o3jhgs4yva.png",
+          "icon_with_name": ""
      }
 }

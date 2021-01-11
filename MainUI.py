@@ -35,8 +35,12 @@ class MainUI(QMainWindow):
 		super(MainUI, self).__init__()
 		self.loadingWindow = LoadingWindow()
 		self.loadingWindow.show()
-		self.loadingWindow.downloader._signal.connect(self.startMainUI)
-		self.loadingWindow.getResources()
+		if self.loadingWindow.isNetOK:
+			self.loadingWindow.downloader._signal.connect(self.startMainUI)
+			self.loadingWindow.getUpdates()
+			self.loadingWindow.getResources()
+		else:
+			self.startMainUI(0)
 
 	def startMainUI(self, value):
 		if value > 0:
